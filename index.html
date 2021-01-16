@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="justCapitalsOnPage()">upper case in order</button>
+    <button onclick="justLowerCaseOnPage()">lower case in order</button>
+    <button onclick="justCapitalsOnPageRandomized()">upper case random</button>
+    <button onclick="justLowerCaseOnPageRandomized()">lower case random</button>
+
+    <div id="letterDiv" style="font-size: 30px;">
+    </div>
+    <script>
+        const capitalLetters = [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"]
+        const lowerCaseLetters = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z"
+        ]
+        const justCapitalsOnPage = () => {
+            document.getElementById("letterDiv").innerHTML = ""
+
+            for (let i = 0; i < capitalLetters.length; i++) {
+                document.getElementById("letterDiv").append(capitalLetters[i], "\n")
+            }
+        }
+
+        const justCapitalsOnPageRandomized = () => {
+            document.getElementById("letterDiv").innerHTML = ""
+            const randomizedCapitals = capitalLetters.sort(() => .5 - Math.random());
+            for (let i = 0; i < capitalLetters.length; i++) {
+                document.getElementById("letterDiv").append(randomizedCapitals[i], "\n")
+            }
+        }
+
+        const justLowerCaseOnPage = () => {
+            document.getElementById("letterDiv").innerHTML = ""
+
+            for (let i = 0; i < lowerCaseLetters.length; i++) {
+                document.getElementById("letterDiv").append(lowerCaseLetters[i], "\n")
+            }
+        }
+
+        const justLowerCaseOnPageRandomized = () => {
+            document.getElementById("letterDiv").innerHTML = ""
+            const randomizedLowerCase = lowerCaseLetters.sort(() => .5 - Math.random());
+            for (let i = 0; i < capitalLetters.length; i++) {
+                document.getElementById("letterDiv").append(randomizedLowerCase[i], "\n")
+            }
+        }
+    </script>
+</body>
+
+</html>
